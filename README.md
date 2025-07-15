@@ -69,7 +69,7 @@ Evaluation: Confusion matrix, classification report, accuracy score
 
 ### 1. Clone the repo:
 
-<pre>```git clone https://github.com/aayush2004-hack/Crop-Recommendation-System.git cd Crop-Recommendation-System```</pre>
+<pre> ```bash git clone https://github.com/aayush2004-hack/Crop-Recommendation-System.git cd Crop-Recommendation-System ``` </pre>
 
 ### 2. Install dependencies:
 
