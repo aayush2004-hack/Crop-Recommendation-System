@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_toggle import st_toggle_switch
 import pandas as pd
 import pickle
 import os
