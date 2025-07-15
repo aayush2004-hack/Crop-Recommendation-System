@@ -5,30 +5,26 @@ import os
 import json
 from PIL import Image
 
-# Load model
 with open("crop_model_optimized.pkl", "rb") as file:
     model = pickle.load(file)
 
-# Load crop info
 if os.path.exists("crop_info.json"):
     with open("crop_info.json", "r") as file:
         crop_info = json.load(file)
 else:
     crop_info = {}
 
-# App Config
+
 st.set_page_config(page_title="Crop Recommendation", layout="wide")
 st.markdown("<h1 style='text-align: center;'>🌾 Smart Crop Recommendation System</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Enter soil and weather conditions to get the best crop suggestion.</p>", unsafe_allow_html=True)
 
 st.markdown("---")
 
-# Layout with columns
 left_col, right_col = st.columns([1, 1])
 
-# Input Fields
 with left_col:
-    st.subheader("📥 Input Parameters")
+    st.subheader("Input Parameters")
     N = st.number_input("Nitrogen content (N)", 0.0, 150.0, step=1.0)
     P = st.number_input("Phosphorus content (P)", 0.0, 150.0, step=1.0)
     K = st.number_input("Potassium content (K)", 0.0, 200.0, step=1.0)
@@ -41,17 +37,14 @@ with left_col:
         input_data = [[N, P, K, temperature, humidity, ph, rainfall]]
         prediction = model.predict(input_data)[0]
 
-        # Save result in session
         st.session_state.prediction = prediction
 
-# 🌾 Output Section
 if "prediction" in st.session_state:
     prediction = st.session_state.prediction
     with right_col:
         st.subheader("🌟 Recommended Crop")
         st.success(f"**{prediction.title()}**")
 
-        # Crop Image Card
         image_path = f"images/{prediction}.png"
         if os.path.exists(image_path):
             img = Image.open(image_path)
@@ -62,7 +55,6 @@ if "prediction" in st.session_state:
         else:
             st.info("📷 Crop image not available.")
 
-        # Extra info if available
         if prediction in crop_info:
             st.markdown("### 🌿 Crop Details")
             st.markdown(f"**🌦️ Climate:** {crop_info[prediction]['climate']}")
