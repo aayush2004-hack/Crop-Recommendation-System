@@ -69,17 +69,16 @@ Evaluation: Confusion matrix, classification report, accuracy score
 
 ### 1. Clone the repo:
 
-git clone https://github.com/aayush2004-hack/Crop-Recommendation-System.git
-
-cd Crop-Recommendation-System
+<pre>```git clone https://github.com/aayush2004-hack/Crop-Recommendation-System.git
+  cd Crop-Recommendation-System```</pre>
 
 ### 2. Install dependencies:
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ### 3. Run the app:
 
-streamlit run app.py
+`streamlit run app.py`
 
 ## 🌍 Deployment
 Deployed via Streamlit Cloud
