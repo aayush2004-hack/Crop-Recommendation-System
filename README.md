@@ -1,5 +1,8 @@
 # Crop-Recommendation-System
+
 Machine Learning based crop recommedation system that  predicts the crop based on the soil and climatic condition.
+
+
 ## 📌 Project Overview
 This Crop Recommendation System uses Machine Learning to help farmers and agricultural planners choose the most suitable crop to cultivate based on inputs like nitrogen, phosphorus, potassium, temperature, humidity, pH, and rainfall.
 
@@ -7,7 +10,7 @@ This Crop Recommendation System uses Machine Learning to help farmers and agricu
 
 ### 📊 Dataset: https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset
 
-##  Features
+## 🧠 Features
 Takes 7 environmental inputs (N, P, K, temperature, humidity, pH, rainfall)
 
 Predicts from 22 crops (like Rice, Wheat, Tea, Cotton, etc.)
@@ -60,6 +63,7 @@ Evaluation: Confusion matrix, classification report, accuracy score
 | Rainfall       | 100 mm |
 
 ## 🟢 Output: Recommended Crop → Jute / Rice / etc. (based on prediction)
+
 
 ## 🚀 How to Run Locally
 
